@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MaterialDesignProject</string>
+    <string name="text">Note that the ActionBar continues to work and if all you need is a static bar at the top that can host icons and a back button, then you can safely continue to use ActionBar.</string>
 </resources>
