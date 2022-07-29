@@ -2,14 +2,20 @@ package com.example.materialdesignproject;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.SurfaceControl;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.card.MaterialCardView;
+
+import java.util.Objects;
 
 public class MainFragment extends Fragment {
     @Nullable
@@ -42,6 +48,24 @@ public class MainFragment extends Fragment {
     app:strokeWidth="1dp"
     app:cardBackgroundColor="@color/purple_50"
          */
+
+        /*toye fragment ha be getSupportActionBar() dastresi nadarim
+        bayad ye instance az AppCompatActivity dashte bashim :
+         */
+        AppCompatActivity appCompatActivity=(AppCompatActivity)getActivity();
+        appCompatActivity.setSupportActionBar((Toolbar) getView().findViewById(R.id.toolbarMain));
+
+
+        MaterialCardView materialCardView=getView().findViewById(R.id.materialCardView_item);
+        materialCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentTransaction transaction= requireActivity().getSupportFragmentManager().beginTransaction();
+                transaction.add(R.id.fragmentContainerView , new DetailFragment());
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
 
         super.onViewCreated(view, savedInstanceState);
     }

@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         for toolbar and actionbar
          */
         //to use toolbars an action bar we have to set it as an action bar:
-        setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
+//        setSupportActionBar((Toolbar) findViewById(R.id.toolbarMain));
 
         /*har zaman karbar scroll kard tool bar ham scroll she:
 
