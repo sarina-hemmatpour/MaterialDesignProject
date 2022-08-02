@@ -6,7 +6,8 @@
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:id="@+id/detailAppbarLayout">
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:id="@+id/collapsingToolbar_detail"
             android:layout_width="match_parent"
@@ -61,6 +62,25 @@
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:fabSize="mini"
+        app:srcCompat="@drawable/ic_baseline_add_24"
+        app:layout_anchor="@id/detailAppbarLayout"
+        app:layout_anchorGravity="bottom|end"
+        app:useCompatPadding="true"/>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:icon="@drawable/ic_baseline_layers_24"
+        android:text="Extended Fab"
+        android:layout_gravity="bottom|center_horizontal"
+        android:backgroundTint="#212121"
+        android:layout_marginBottom="24dp"/>
+
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

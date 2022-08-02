@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.SurfaceControl;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -14,6 +15,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.card.MaterialCardView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.Objects;
 
@@ -64,6 +66,14 @@ public class MainFragment extends Fragment {
                 transaction.add(R.id.fragmentContainerView , new DetailFragment());
                 transaction.addToBackStack(null);
                 transaction.commit();
+            }
+        });
+
+        FloatingActionButton floatingActionButton=getView().findViewById(R.id.fabMain);
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(view.getContext(), "FAB", Toast.LENGTH_SHORT).show();
             }
         });
 
