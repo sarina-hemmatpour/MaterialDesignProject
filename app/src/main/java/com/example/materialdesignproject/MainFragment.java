@@ -16,6 +16,8 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.BaseTransientBottomBar;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.Objects;
 
@@ -73,7 +75,17 @@ public class MainFragment extends Fragment {
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(view.getContext(), "FAB", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(view.getContext(), "FAB", Toast.LENGTH_SHORT).show();
+                //snackBar: (Use it with CoordinatorLayout)
+                Snackbar snackbar=Snackbar.make(getView(),"Material Design SnackBar" , BaseTransientBottomBar.LENGTH_INDEFINITE);
+                snackbar.setAction("dismiss", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        snackbar.dismiss();
+                    }
+                });
+                snackbar.show();
+
             }
         });
 
