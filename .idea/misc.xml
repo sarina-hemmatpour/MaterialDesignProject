@@ -3,10 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/almas/AndroidStudioProjects/MaterialDesignProject/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.173" />
+        <entry key="..\:/Users/almas/AndroidStudioProjects/MaterialDesignProject/app/src/main/res/drawable/ic_baseline_layers_24.xml" value="0.173" />
+        <entry key="..\:/Users/almas/AndroidStudioProjects/MaterialDesignProject/app/src/main/res/drawable/ic_history_24px.xml" value="0.173" />
         <entry key="..\:/Users/almas/AndroidStudioProjects/MaterialDesignProject/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/almas/AndroidStudioProjects/MaterialDesignProject/app/src/main/res/layout/fragment_detail.xml" value="0.27801418439716313" />
         <entry key="..\:/Users/almas/AndroidStudioProjects/MaterialDesignProject/app/src/main/res/layout/fragment_main.xml" value="0.22630331753554503" />
+        <entry key="..\:/Users/almas/AndroidStudioProjects/MaterialDesignProject/app/src/main/res/layout/fragment_nearby.xml" value="0.15760869565217392" />
+        <entry key="..\:/Users/almas/AndroidStudioProjects/MaterialDesignProject/app/src/main/res/layout/fragment_recent.xml" value="0.15760869565217392" />
         <entry key="..\:/Users/almas/AndroidStudioProjects/MaterialDesignProject/app/src/main/res/layout/item_text.xml" value="0.5" />
+        <entry key="..\:/Users/almas/AndroidStudioProjects/MaterialDesignProject/app/src/main/res/menu/menu_main.xml" value="0.20416666666666666" />
       </map>
     </option>
   </component>

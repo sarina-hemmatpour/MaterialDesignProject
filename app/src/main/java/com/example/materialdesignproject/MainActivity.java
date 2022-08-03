@@ -1,9 +1,17 @@
 package com.example.materialdesignproject;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.widget.NestedScrollView;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
+import android.view.MenuItem;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import java.util.concurrent.ThreadLocalRandom;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -42,6 +50,52 @@ public class MainActivity extends AppCompatActivity {
         app:liftOnScroll="true"
          */
 
+
+        BottomNavigationView bottomNavigationView=findViewById(R.id.bottomNavigation_main);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                switch (item.getItemId()){
+                    case R.id.menuItem_home:
+                        FragmentTransaction transaction=getSupportFragmentManager().beginTransaction();
+                        transaction.replace(R.id.fragmentContainerView , new MainFragment());
+                        transaction.commit();
+                        break;
+                    case R.id.menuItem_recent:
+                        FragmentTransaction transaction1=getSupportFragmentManager().beginTransaction();
+                        transaction1.replace(R.id.fragmentContainerView , new RecentFragment());
+                        transaction1.commit();
+                        break;
+                    case R.id.menuItem_nearby:
+                        FragmentTransaction transaction2=getSupportFragmentManager().beginTransaction();
+                        transaction2.replace(R.id.fragmentContainerView , new NearbyFragment());
+                        transaction2.commit();
+
+                }
+
+                //true: means that the item should get selected
+                return true;
+            }
+        });
+
+        bottomNavigationView.setOnNavigationItemReselectedListener(new BottomNavigationView.OnNavigationItemReselectedListener() {
+            @Override
+            public void onNavigationItemReselected(@NonNull MenuItem item) {
+                switch (item.getItemId())
+                {
+                    case R.id.menuItem_home:
+                        NestedScrollView nestedScrollView=findViewById(R.id.nestedScrollView);
+                        nestedScrollView.smoothScrollTo( 0, nestedScrollView.getTop()); //there's a bug here
+                }
+            }
+        });
+
+        bottomNavigationView.setSelectedItemId(R.id.menuItem_home);
+        /* style=> (vaghti toolbar white e)
+        style="@style/Widget.MaterialComponents.BottomNavigationView.Colored"
+         */
 
     }
 }
